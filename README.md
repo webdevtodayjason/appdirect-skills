@@ -49,7 +49,10 @@ Each skill was tested against baseline (no-skill) runs on realistic tasks, grade
 ## Repo layout
 
 ```
-.claude/skills/
+.claude-plugin/
+├── marketplace.json                    # marketplace manifest → enables /plugin install
+└── plugin.json                         # plugin manifest (name, version, metadata)
+skills/
 ├── appdirect-submission/
 │   ├── SKILL.md                        # triggering + workflow + hard-won rules
 │   └── references/
@@ -67,17 +70,24 @@ dist/                                   # packaged .skill bundles for client imp
 
 ## Install
 
-**Option 1 — copy the folders** into your skills directory:
+**Option 1 — install as a Claude Code plugin** (recommended; no cloning, auto-updates):
 
-```bash
-# Global (all projects)
-cp -R .claude/skills/appdirect-* ~/.claude/skills/
-
-# Or per-project
-cp -R .claude/skills/appdirect-* /path/to/project/.claude/skills/
+```
+/plugin marketplace add webdevtodayjason/appdirect-skills
+/plugin install appdirect@appdirect-skills
 ```
 
-**Option 2 — import the packaged bundles**: open the `.skill` files in [`dist/`](dist/) with your Claude client's skill importer (Cowork and Claude Desktop render a "Save skill" button).
+The two skills install as `appdirect:appdirect-submission` and `appdirect:appdirect-api-integration`.
+
+**Option 2 — copy the folders** into your skills directory:
+
+```bash
+git clone https://github.com/webdevtodayjason/appdirect-skills
+cp -R appdirect-skills/skills/appdirect-* ~/.claude/skills/                    # global (all projects)
+# or per-project:  cp -R appdirect-skills/skills/appdirect-* /path/to/project/.claude/skills/
+```
+
+**Option 3 — import the packaged bundles**: open the `.skill` files in [`dist/`](dist/) with your Claude client's skill importer (Cowork and Claude Desktop render a "Save skill" button).
 
 Skills activate automatically when your request matches — e.g. *"submit my product to AppDirect"*, *"why is my completion score stuck at 85%"*, *"scaffold AppDirect event endpoints"*, *"my createProduct mutation fails with no detail"*.
 

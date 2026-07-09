@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "appdirect",
+  "displayName": "AppDirect Skills",
+  "description": "Agent skills for AppDirect marketplace work — app submission runbook (100% profile-completion) and platform API integration (OAuth, GraphQL mutations, event endpoints, SSO).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jason Brashear",
+    "url": "https://jasonbrashear.com"
+  },
+  "homepage": "https://github.com/webdevtodayjason/appdirect-skills",
+  "repository": "https://github.com/webdevtodayjason/appdirect-skills",
+  "license": "MIT",
+  "keywords": [
+    "appdirect",
+    "marketplace",
+    "isv",
+    "saas",
+    "graphql",
+    "oauth",
+    "skills",
+    "claude-code"
+  ]
+}

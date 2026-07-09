@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "appdirect-skills",
+  "owner": {
+    "name": "Jason Brashear"
+  },
+  "description": "AppDirect marketplace skills for Claude Code — app submission and platform API integration.",
+  "plugins": [
+    {
+      "name": "appdirect",
+      "source": "./",
+      "description": "App submission runbook + platform API integration skills for AppDirect ISVs."
+    }
+  ]
+}
